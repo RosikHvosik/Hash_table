@@ -9,20 +9,17 @@
 
 std::string generateName()
 {
-    std::vector<std::string> surnames = {
-        "Voloshinskiy", "Ivanov", "Petrov", "Sidorov", "Komarov",
-        "Lebedev", "Smirnov", "Morozov", "Novikov", "Popov"
-    };
+    //std::vector<std::string> surnames = {"Voloshinskiy", "Ivanov", "Petrov", "Sidorov", "Komarov","Lebedev", "Smirnov", "Morozov", "Novikov", "Popov"};
 
-    std::vector<std::string> names = {
-        "Rostislav", "Artem", "Daniil", "Vadim", "Oleg",
-        "Yuri", "Alexey", "Nikita", "Kirill", "Vladislav"
-    };
+    std::vector<std::string> surnames = {"Popov"};
 
-    std::vector<std::string> patronymics = {
-        "Anatolevich", "Ivanovich", "Petrovich", "Nikolaevich",
-        "Sergeevich", "Alexeevich", "Yurievich", "Andreevich"
-    };
+    std::vector<std::string> names = {"Vladislav"};
+
+    //std::vector<std::string> names = {"Rostislav", "Artem", "Daniil", "Vadim", "Oleg","Yuri", "Alexey", "Nikita", "Kirill", "Vladislav"};
+
+    std::vector<std::string> patronymics = {"Andreevich"};
+
+    //std::vector<std::string> patronymics = {"Anatolevich", "Ivanovich", "Petrovich", "Nikolaevich","Sergeevich", "Alexeevich", "Yurievich", "Andreevich"};
 
     return surnames[std::rand() % surnames.size()] + " " +
            names[std::rand() % names.size()] + " " +
@@ -31,15 +28,11 @@ std::string generateName()
 
 std::string generateCarModel()
 {
-    std::vector<std::string> brands = {
-        "Toyota", "BMW", "Mercedes", "Lada", "Ford",
-        "Audi", "Hyundai", "Kia", "Mazda", "Volkswagen"
-    };
+    //std::vector<std::string> brands = {"Toyota", "BMW", "Mercedes", "Lada", "Ford","Audi", "Hyundai", "Kia", "Mazda", "Volkswagen"};
+    std::vector<std::string> brands = {"Toyota"};
 
-    std::vector<std::string> models = {
-        "Camry", "X5", "E200", "Granta", "Focus",
-        "A4", "Solaris", "Rio", "CX-5", "Polo", "Passat"
-    };
+    //std::vector<std::string> models = {"Camry", "X5", "E200", "Granta", "Focus","A4", "Solaris", "Rio", "CX-5", "Polo", "Passat"};
+    std::vector<std::string> models = {"Camry"};
 
     return brands[std::rand() % brands.size()] + " " +
            models[std::rand() % models.size()];
@@ -47,8 +40,10 @@ std::string generateCarModel()
 
 std::string generateDate()
 {
-    int hour = std::rand() % 24;
-    int minute = std::rand() % 60;
+    //int hour = std::rand() % 24;
+    //int minute = std::rand() % 60;
+    int hour = 16;
+    int minute = 48;
     char buffer[6];
     std::snprintf(buffer, sizeof(buffer), "%02d:%02d", hour, minute);
 

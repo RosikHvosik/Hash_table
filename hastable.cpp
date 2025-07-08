@@ -176,12 +176,7 @@ std::pair<int, int> search(const std::string& line) {
 void remove(const std::string& line) {
     auto [fio, id] = parse_line(line);
 
-    unsigned int full_hash = 0;
-    for (char c : fio) {
-        full_hash = full_hash * 31 + c;
-    }
-    full_hash = full_hash * 31 + id;
-
+    unsigned int full_hash = compute_hash_key(fio, id);
     unsigned int base_index = full_hash % capacity;
 
     for (int i = 0; i < capacity; i++) {
@@ -203,6 +198,7 @@ void remove(const std::string& line) {
         resize(capacity / 2);
     }
 }
+
 
 
 void resize(int new_capacity) {
