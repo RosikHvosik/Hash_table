@@ -1,0 +1,13 @@
+
+.vscode/
+
+*.exe
+
+
+Data.txt
+Output.txt
+Report.txt
+
+*.log
+*.tmp
+*~
