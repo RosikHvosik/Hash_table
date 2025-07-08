@@ -22,9 +22,9 @@ std::pair<std::string, unsigned int> parse_line(const std::string& line) {
         last = word;
         ++index;
     }
-
     return {FIO, static_cast<unsigned int>(std::stoul(last))};
 }
+
 
 struct hastable_item
 {

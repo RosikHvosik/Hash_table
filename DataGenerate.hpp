@@ -47,18 +47,18 @@ std::string generateCarModel()
 
 std::string generateDate()
 {
-    int day = std::rand() % 28 + 1;      // 1–28
-    int month = std::rand() % 12 + 1;    // 1–12
-    int year = 2020 + (std::rand() % 6); // 2020–2025
+    int hour = std::rand() % 24;
+    int minute = std::rand() % 60;
+    char buffer[6];
+    std::snprintf(buffer, sizeof(buffer), "%02d:%02d", hour, minute);
 
-    return std::to_string(day) + " " +
-           std::to_string(month) + " " +
-           std::to_string(year);
+    return std::string(buffer);
 }
+
 
 void GenerateData(const std::string& filename, int n)
 {
-    std::srand(static_cast<unsigned int>(std::time(nullptr))); // инициализация генератора
+    std::srand(static_cast<unsigned int>(std::time(nullptr)));
 
     std::ofstream out(filename);
     if (!out.is_open()) return;
